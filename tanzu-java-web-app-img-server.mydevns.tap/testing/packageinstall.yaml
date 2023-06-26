@@ -8,7 +8,7 @@ spec:
  serviceAccountName: default
  packageRef:
    #refName: app.default.tap # name of the Package
-   refName: tanzu-java-web-app-img-server.mydevns.tap.20230626133114.0.0
+   refName: tanzu-java-web-app-img-server.mydevns.tap #.20230626133114.0.0
    versionSelection:
      #constraints: 20230321004057.0.0 # version of the Package
      constraints: 20230626133114.0.0
