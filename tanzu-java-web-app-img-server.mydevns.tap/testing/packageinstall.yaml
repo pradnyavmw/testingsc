@@ -2,7 +2,7 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
- name: tanzu-java-web-app-img-server #pkginstalljavaserverapp
+ name: tanzu-java-web-app-img-server.mydevns.tap #pkginstalljavaserverapp
 spec:
  #serviceAccountName: <run-cluster-ns-sa> # ServiceAccount on run cluster with permissions to deploy Package, see "Set up run Cluster Namespaces"
  serviceAccountName: default
