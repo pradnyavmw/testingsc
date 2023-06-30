@@ -11,7 +11,7 @@ spec:
    refName: myservergitrepo3.mydevns.tap
    versionSelection:
      #constraints: 20230321004057.0.0 # version of the Package
-     constraints: “>= 0.0.0-0” #20230630200348.0.0
+     constraints: ">= 0.0.0-0" #20230630200348.0.0
  values:
  - secretRef:
      #name: app-values # Secret created in previous step
