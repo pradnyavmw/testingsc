@@ -3,6 +3,8 @@ apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
  name: myservergitrepo3.mydevns.tap
+ annotations:
+    packaging.carvel.dev/downgradable: ""
 spec:
  #serviceAccountName: <run-cluster-ns-sa> # ServiceAccount on run cluster with permissions to deploy Package, see "Set up run Cluster Namespaces"
  serviceAccountName: default
