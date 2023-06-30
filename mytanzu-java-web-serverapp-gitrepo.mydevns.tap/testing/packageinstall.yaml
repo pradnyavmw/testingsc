@@ -10,7 +10,7 @@ spec:
  packageRef:
    refName: mytanzu-java-web-serverapp-gitrepo.mydevns.tap
    versionSelection:
-     constraints: ">= 0.0.0-0" # 20230629155944.0.0 same as package constriant here -https://github.com/pradnyavmw/testingsc/blob/main/mytanzu-java-web-serverapp-gitrepo.mydevns.tap/packages/20230629155944.0.0.yml
+     constraints: "> 0.0.0-0" # 20230629155944.0.0 same as package constriant here -https://github.com/pradnyavmw/testingsc/blob/main/mytanzu-java-web-serverapp-gitrepo.mydevns.tap/packages/20230629155944.0.0.yml
  values:
  - secretRef:
      name: myserverappsecret #shoul be same as secret name in params.yaml
