@@ -47,7 +47,7 @@ spec:
       - env:
         - name: JAVA_TOOL_OPTIONS
           value: -Dmanagement.endpoint.health.probes.add-additional-paths="true" -Dmanagement.health.probes.enabled="true" -Dserver.port="8080" -Dserver.shutdown.grace-period="24s"
-        image: gcr.io/daisy-284300/pradnya/mytanzu-java-web-app-gitrepo-edit1-mydevns@sha256:209efa9d8c8bf881ec5ed73f8281a8abc414a512eb935423a2583db5bac47306
+        image: gcr.io/daisy-284300/pradnya/mytanzu-java-web-app-gitrepo-edit1-mydevns@sha256:b6277f933963bd441892081db0c7c3b4394e12ff13d8183061fa3eb5d6203f00
         livenessProbe:
           httpGet:
             path: /livez
