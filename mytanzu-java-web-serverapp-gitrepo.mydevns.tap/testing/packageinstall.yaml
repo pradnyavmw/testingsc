@@ -3,6 +3,8 @@ apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
  name: mytanzu-java-web-serverapp-gitrepo.mydevns.tap
+ annotations:
+   packaging.carvel.dev/downgradable: ""
 spec:
  serviceAccountName: default
  packageRef:
