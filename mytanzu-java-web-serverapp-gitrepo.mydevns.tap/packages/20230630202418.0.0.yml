@@ -1,0 +1,25 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: mytanzu-java-web-serverapp-gitrepo.mydevns.tap.20230630202418.0.0
+spec:
+  refName: mytanzu-java-web-serverapp-gitrepo.mydevns.tap
+  version: 20230630202418.0.0
+  releaseNotes: |
+    Release v20230630202418.0.0 of package mytanzu-java-web-serverapp-gitrepo.mydevns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: gcr.io/daisy-284300/pradnya/mytanzu-java-web-serverapp-gitrepo-mydevns-bundle@sha256:1c749ab53498834e383af2f199c75ce95596637e9da0345507b56e582875302e
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+
