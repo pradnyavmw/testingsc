@@ -1,0 +1,14 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+ name: server-source-url.mydevns.tap
+spec:
+ serviceAccountName: default
+ packageRef:
+   refName: server-source-url.mydevns.tap
+   versionSelection:
+     constraints: 20230711204422.0.0+build.b470251
+ values:
+ - secretRef:
+     name: server-source-url-mydevns-tap
