@@ -2,7 +2,7 @@
 apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
- name: web-img-to-url.mydevns.tap #name of package without the version 
+ name: web-img-to-url #name of package without the version 
 spec:
  serviceAccountName: default
  packageRef:
