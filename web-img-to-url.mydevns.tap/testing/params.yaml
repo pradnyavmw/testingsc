@@ -7,5 +7,5 @@ stringData:
  values.yaml: |
    ---
    workload_name: web-img-to-url
-   replicas: 7
-   hostname: web-img-to-url-test.mycompany.com
+   replicas: 2
+   hostname: web-img-to-url.mycompany.com
