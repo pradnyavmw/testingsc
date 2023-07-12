@@ -1,0 +1,25 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: myservergitrepo3.mydevns.tap.20230712192354.0.0
+spec:
+  refName: myservergitrepo3.mydevns.tap
+  version: 20230712192354.0.0
+  releaseNotes: |
+    Release v20230712192354.0.0 of package myservergitrepo3.mydevns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: gcr.io/daisy-284300/pradnya/myservergitrepo3-mydevns-bundle@sha256:f5091461223a529a2bc7573655da0f27c9ce94de742164afe33bd9bbd460d461
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+
