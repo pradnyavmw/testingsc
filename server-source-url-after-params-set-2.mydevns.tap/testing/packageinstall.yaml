@@ -9,7 +9,8 @@ spec:
    refName:  server-source-url-after-params-set-2.mydevns.tap
    versionSelection:
      # constraints: 20230712142555.0.0+build.b470251 #">=0.0.0"
-     constraints: 20230712145511.0.0+build.b470251
+     #constraints: 20230712145511.0.0+build.b470251
+     constraints: ">=0.0.0"
  values:
  - secretRef:
      name: server-source-url-after-params-set-2-mydevns-tap
