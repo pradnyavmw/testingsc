@@ -31,7 +31,7 @@ spec:
           title: Replicas
           type: integer
           description: Number of replicas.
-          default: 16
+          default: 25
         port:
           title: Port
           type: integer
