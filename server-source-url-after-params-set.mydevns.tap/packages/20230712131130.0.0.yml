@@ -32,4 +32,24 @@ spec:
           type: integer
           description: Number of replicas.
           default: 11
+        workload_name:
+          title: Workload name
+          type: string
+          description: Required. Name of the workload, used by K8s Ingress HTTP rules.
+          default: ""
+        port:
+          title: Port
+          type: integer
+          description: Port number for the backend associated with K8s Ingress.
+          default: 8080
+        hostname:
+          title: Hostname
+          type: string
+          description: If set, K8s Ingress will be created with HTTP rules for hostname.
+          default: ""
+        cluster_issuer:
+          title: Cluster Issuer
+          type: string
+          description: CertManager Issuer to use to generate certificate for K8s Ingress.
+          default: tap-ingress-selfsigned
 
