@@ -1,0 +1,14 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+ name: source-to-url-serverworkload-newparam.mydevns.tap
+spec:
+ serviceAccountName: default
+ packageRef:
+   refName:  source-to-url-serverworkload-newparam.mydevns.tap
+   versionSelection:
+     constraints: ">=0.0.0" 
+ values:
+ - secretRef:
+     name: source-to-url-serverworkload-newparam.mydevns.tap
