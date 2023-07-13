@@ -1,0 +1,14 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+ name: mynodejsworkload.mydevns.tap
+spec:
+ serviceAccountName: default
+ packageRef:
+   refName: mynodejsworkload.mydevns.tap
+   versionSelection:
+     constraints: ">0.0.0-0"  
+ values:
+ - secretRef:
+     name: mynodejsworkload.mydevns.tap

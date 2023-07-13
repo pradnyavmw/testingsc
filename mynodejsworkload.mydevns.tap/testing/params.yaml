@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+ name: mynodejsworkload.mydevns.tap
+stringData:
+ values.yaml: |
+   ---
+  #  replicas: 9
+  #  hostname: mynodejsworkload.mydevns.tap.mycompany.com
