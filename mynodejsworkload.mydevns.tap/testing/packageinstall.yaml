@@ -3,13 +3,15 @@ apiVersion: packaging.carvel.dev/v1alpha1
 kind: PackageInstall
 metadata:
  name: mynodejsworkload.mydevns.tap
+ annotations:
+  packaging.carvel.dev/downgradable: "" 
 spec:
  serviceAccountName: default
  packageRef:
-   refName: mynodejsworkload.mydevns.tap
-   versionSelection:
+  refName: mynodejsworkload.mydevns.tap
+  versionSelection:
      #constraints: ">0.0.0-0"  
-     constraints: 20230713214258.0.0+build.deccc2c 
- values:
- - secretRef:
-     name: mynodejsworkload.mydevns.tap
+   constraints: 20230713214258.0.0+build.deccc2c 
+  values:
+  - secretRef:
+    name: mynodejsworkload.mydevns.tap
