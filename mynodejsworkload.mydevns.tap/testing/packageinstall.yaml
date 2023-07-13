@@ -9,7 +9,7 @@ spec:
    refName: mynodejsworkload.mydevns.tap
    versionSelection:
      #constraints: ">0.0.0-0"  
-     constraints: ">=0.0.0" 
+     constraints: 20230713214258.0.0+build.deccc2c 
  values:
  - secretRef:
      name: mynodejsworkload.mydevns.tap
