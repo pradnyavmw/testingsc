@@ -1,0 +1,55 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: source-to-url-serverworkload-newparam.mydevns.tap.20230713145356.0.0+build.13e7965
+spec:
+  refName: source-to-url-serverworkload-newparam.mydevns.tap
+  version: 20230713145356.0.0+build.13e7965
+  releaseNotes: |
+    Release v20230713145356.0.0+build.13e7965 of package source-to-url-serverworkload-newparam.mydevns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: gcr.io/daisy-284300/pradnya/source-to-url-serverworkload-newparam-mydevns-bundle@sha256:8b78a5d4590f06f5a86eca425c33cbb7a31211cf681d157c8a7f48250ccee49b
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        replicas:
+          title: Replicas
+          type: integer
+          description: Number of replicas.
+          default: 10
+        port:
+          title: Port
+          type: integer
+          description: Port number for the backend associated with K8s Ingress.
+          default: 8080
+        hostname:
+          title: Hostname
+          type: string
+          description: If set, K8s Ingress will be created with HTTP rules for hostname.
+          default: ""
+        cluster_issuer:
+          title: Cluster Issuer
+          type: string
+          description: CertManager Issuer to use to generate certificate for K8s Ingress.
+          default: tap-ingress-selfsigned
+        greeting:
+          title: Greeting
+          type: string
+          description: Parameter to greeting
+          default: from-outer-space
+
