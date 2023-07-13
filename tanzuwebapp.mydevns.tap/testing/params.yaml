@@ -1,0 +1,10 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+ name: tanzuwebapp.mydevns.tap
+stringData:
+ values.yaml: |
+   ---
+   replicas: 7
+   hostname: tanzuwebapp.mydevns.tap.mycompany.com
