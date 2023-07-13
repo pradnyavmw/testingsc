@@ -1,0 +1,35 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: server-source-java-hello.mydevns.tap.20230713040653.0.0+build.5155d72
+spec:
+  refName: server-source-java-hello.mydevns.tap
+  version: 20230713040653.0.0+build.5155d72
+  releaseNotes: |
+    Release v20230713040653.0.0+build.5155d72 of package server-source-java-hello.mydevns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: gcr.io/daisy-284300/pradnya/server-source-java-hello-mydevns-bundle@sha256:cc4509b562c956d56639d2d5877608bbf844b1797b16814d7a5b56ede2b14da6
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        replicas:
+          title: Replicas
+          type: integer
+          description: Number of replicas.
+          default: 21
+
