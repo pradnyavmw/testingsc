@@ -1,0 +1,35 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: server-source-url.mydevns.tap.20230713040706.0.0+build.5155d72
+spec:
+  refName: server-source-url.mydevns.tap
+  version: 20230713040706.0.0+build.5155d72
+  releaseNotes: |
+    Release v20230713040706.0.0+build.5155d72 of package server-source-url.mydevns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: gcr.io/daisy-284300/pradnya/server-source-url-mydevns-bundle@sha256:a12f14fb9c74086be1c18f1bc28f869113cf418c500deb49ad33bdc6286598fd
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        replicas:
+          title: Replicas
+          type: integer
+          description: Number of replicas.
+          default: 21
+
