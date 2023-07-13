@@ -6,7 +6,7 @@ metadata:
 stringData:
  values.yaml: |
    ---
-    #workload_name: tanzuwebapp
+    workload_name: test
     replicas: 7
     #hostname: tanzuwebapp.mydevns.tap.mycompany.com
  
