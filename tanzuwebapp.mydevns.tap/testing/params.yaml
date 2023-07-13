@@ -8,5 +8,7 @@ stringData:
    ---
     workload_name: tanzuwebapp
     replicas: 7
-    #hostname: tanzuwebapp.mydevns.tap.mycompany.com
+    hostname: tanzuwebapp.mydevns.tap.mycompany.com
+    cluster_issuer: tap-ingress-selfsigned
+    port: 8080
  
