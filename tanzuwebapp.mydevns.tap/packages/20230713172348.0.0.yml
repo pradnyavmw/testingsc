@@ -27,6 +27,11 @@ spec:
       type: object
       additionalProperties: false
       properties:
+        workload_name: 
+          title: workload_name
+          type: string
+          description: Name of workload
+          default: tanzuwebapp
         replicas:
           title: Replicas
           type: integer
