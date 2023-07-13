@@ -8,7 +8,8 @@ spec:
  packageRef:
    refName: mynodejsworkload.mydevns.tap
    versionSelection:
-     constraints: ">0.0.0-0"  
+     #constraints: ">0.0.0-0"  
+     constraints: ">=0.0.0" 
  values:
  - secretRef:
      name: mynodejsworkload.mydevns.tap
