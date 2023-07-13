@@ -9,3 +9,15 @@ stringData:
    workload_name: tanzuwebapp
    replicas: 7
    hostname: tanzuwebapp.mydevns.tap.mycompany.com
+
+# ---
+# apiVersion: v1
+# kind: Secret
+# metadata:
+#  name: tanzuwebapp.mydevns.tap
+# stringData:
+#  values.yaml: |
+#   ---
+#   workload_name: tanzuwebapp
+#   replicas: 7
+#   hostname: tanzuwebapp.mydevns.tap.mycompany.com
