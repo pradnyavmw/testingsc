@@ -6,6 +6,6 @@ metadata:
 stringData:
  values.yaml: |
    ---
-   workload_name: myhelloyeti-workload
+   # workload_name: myhelloyeti-workload
    replicas: 2
    hostname: myhelloyeti-workload.mydevns.tap.mycompany.com
