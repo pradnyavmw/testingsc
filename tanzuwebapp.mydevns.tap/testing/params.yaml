@@ -7,8 +7,8 @@ stringData:
  values.yaml: |
    ---
     #workload_name: tanzuwebapp
-    replicas: 7
-    hostname: tanzuwebapp.mydevns.tap.mycompany.com
-    cluster_issuer: tap-ingress-selfsigned
-    port: 8080
+    # replicas: 7
+    # hostname: tanzuwebapp.mydevns.tap.mycompany.com
+    # cluster_issuer: tap-ingress-selfsigned
+    # port: 8080
  
