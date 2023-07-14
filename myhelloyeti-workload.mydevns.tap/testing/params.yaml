@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+ name: myhelloyeti-workload.mydevns.tap
+stringData:
+ values.yaml: |
+   ---
+   workload_name: myhelloyeti-workload
+   #replicas: 2
+   #hostname: myhelloyeti-workload.mydevns.tap.mycompany.com

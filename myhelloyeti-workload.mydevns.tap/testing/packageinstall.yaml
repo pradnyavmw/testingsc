@@ -1,0 +1,14 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+ name: myhelloyeti-workload.mydevns.tap #name of package without the version 
+spec:
+ serviceAccountName: default
+ packageRef:
+   refName: myhelloyeti-workload.mydevns.tap #pkg name without version
+   versionSelection:
+     constraints:  ">=0.0.0"  
+ values:
+ - secretRef:
+     name: myhelloyeti-workload.mydevns.tap
