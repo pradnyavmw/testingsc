@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+ name: mytanzuwebapp.mydevns.tap
+stringData:
+ values.yaml: |
+   ---
+    # workload_name: tanzuwebapp
+    # replicas: 7
+    # hostname: tanzuwebapp.mydevns.tap.mycompany.com
+    # cluster_issuer: tap-ingress-selfsigned
+    # port: 8080
+ 
