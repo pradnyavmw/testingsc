@@ -1,0 +1,55 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: tanzuwebapp.mydevns.tap.20230718154640.0.0+build.13e7965
+spec:
+  refName: tanzuwebapp.mydevns.tap
+  version: 20230718154640.0.0+build.13e7965
+  releaseNotes: |
+    Release v20230718154640.0.0+build.13e7965 of package tanzuwebapp.mydevns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: gcr.io/daisy-284300/pradnya/tanzuwebapp-mydevns-bundle@sha256:a89aa09eabb0c9bcfbacbfda9ddea461bd441c10cd1f3e2cd85d52746cafbe6b
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        replicas:
+          title: Replicas
+          type: integer
+          description: Number of replicas.
+          default: 13
+        port:
+          title: Port
+          type: integer
+          description: Port number for the backend associated with K8s Ingress.
+          default: 8080
+        hostname:
+          title: Hostname
+          type: string
+          description: If set, K8s Ingress will be created with HTTP rules for hostname.
+          default: ""
+        cluster_issuer:
+          title: Cluster Issuer
+          type: string
+          description: CertManager Issuer to use to generate certificate for K8s Ingress.
+          default: tap-ingress-selfsigned
+        greeting:
+          title: Greeting
+          type: string
+          description: Parameter to greeting
+          default: from-outer-space-hahahaha
+
