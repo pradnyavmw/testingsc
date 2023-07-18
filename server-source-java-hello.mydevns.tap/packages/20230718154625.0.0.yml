@@ -1,0 +1,55 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: server-source-java-hello.mydevns.tap.20230718154625.0.0+build.5653e6f
+spec:
+  refName: server-source-java-hello.mydevns.tap
+  version: 20230718154625.0.0+build.5653e6f
+  releaseNotes: |
+    Release v20230718154625.0.0+build.5653e6f of package server-source-java-hello.mydevns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: gcr.io/daisy-284300/pradnya/server-source-java-hello-mydevns-bundle@sha256:9c186ac45f0bc3432f672a2f31b15ce5bddd0042bab385b05a79a2ebe1dd3b88
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        replicas:
+          title: Replicas
+          type: integer
+          description: Number of replicas.
+          default: 13
+        port:
+          title: Port
+          type: integer
+          description: Port number for the backend associated with K8s Ingress.
+          default: 8080
+        hostname:
+          title: Hostname
+          type: string
+          description: If set, K8s Ingress will be created with HTTP rules for hostname.
+          default: ""
+        cluster_issuer:
+          title: Cluster Issuer
+          type: string
+          description: CertManager Issuer to use to generate certificate for K8s Ingress.
+          default: tap-ingress-selfsigned
+        greeting:
+          title: Greeting
+          type: string
+          description: Parameter to greeting
+          default: from-outer-space-hahahaha
+
