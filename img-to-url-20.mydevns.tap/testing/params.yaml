@@ -6,6 +6,7 @@ metadata:
 stringData:
  values.yaml: |
    ---
-   replicas: 3
-   hostname: img-to-url-20.mydevns.tap.mycompany.com
+    workload_name: img-to-url-20
+
+   # hostname: img-to-url-20.mydevns.tap.mycompany.com
 
