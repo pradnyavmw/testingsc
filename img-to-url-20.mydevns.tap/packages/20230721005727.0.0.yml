@@ -1,0 +1,33 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: img-to-url-20.mydevns.tap.20230721005727.0.0
+spec:
+  refName: img-to-url-20.mydevns.tap
+  version: 20230721005727.0.0
+  releaseNotes: |
+    Release v20230721005727.0.0 of package img-to-url-20.mydevns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: gcr.io/daisy-284300/pradnya/img-to-url-20-mydevns-bundle@sha256:40dead59f5cd5dc2755d72c98d7dac98513706a2df5a750975c947074bb20c8a
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        workload_name:
+          type: string
+          default: ""
+
