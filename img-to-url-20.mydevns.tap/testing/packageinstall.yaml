@@ -1,0 +1,15 @@
+---
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+ name: img-to-url-20.mydevns.tap #name of package without the version 
+spec:
+  # ServiceAccount on run cluster with permissions to deploy Package, see "Set up run Cluster Namespaces"
+ serviceAccountName: default
+ packageRef:
+   refName: img-to-url-20.mydevns.tap #pkg name without version
+   versionSelection:
+     constraints: ">=0.0.0"
+ values:
+ - secretRef:
+     name: img-to-url-20.mydevns.tap
