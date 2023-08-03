@@ -1,0 +1,33 @@
+apiVersion: data.packaging.carvel.dev/v1alpha1
+kind: Package
+metadata:
+  name: img-to-url-cp.mydevns.tap.20230803140312.0.0
+spec:
+  refName: img-to-url-cp.mydevns.tap
+  version: 20230803140312.0.0
+  releaseNotes: |
+    Release v20230803140312.0.0 of package img-to-url-cp.mydevns.tap
+  template:
+    spec:
+      fetch:
+      - imgpkgBundle:
+          image: us-east1-docker.pkg.dev/app-last-mile/dpradnya/tappr/img-to-url-cp-mydevns-bundle@sha256:371ce1a8df27b41067d655f828b6244c789f08ae5ec99e86af33be97b53bd624
+      template:
+      - ytt:
+          paths:
+          - .
+      - kbld:
+          paths:
+          - .imgpkg/images.yml
+          - '-'
+      deploy:
+      - kapp: {}
+  valuesSchema:
+    openAPIv3:
+      type: object
+      additionalProperties: false
+      properties:
+        workload_name:
+          type: string
+          default: ""
+
